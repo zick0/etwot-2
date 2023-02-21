@@ -31,21 +31,19 @@ export default function Navbar({ active }) {
           About
         </Link>
         {localStorage.getItem("user_token") ? (
-            <>
-              <button
-                className={className_signup}
-                onClick={() => {
-                  localStorage.removeItem("user_token");
-                  navigate("/");
-                  // window.location.reload();
-                }}
-              >
-                Logout
-              </button>
-            </>
-          ) 
-
-        : (
+          <>
+            <button
+              className={className_signup}
+              onClick={() => {
+                localStorage.removeItem("user_token");
+                navigate("/");
+                // window.location.reload();
+              }}
+            >
+              Logout
+            </button>
+          </>
+        ) : (
           <Link className={className_signup} to="/signup">
             Services
           </Link>

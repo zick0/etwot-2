@@ -11,11 +11,11 @@ export default function About() {
     <>
       <Navbar />
 
-      <div className="aboutbg p-16">
+      <div className="aboutbg h-screen p-16">
         {/* <img className="imgabout" src={about1} /> */}
         <div className="flex justify-center items-center flex-col title text-left pt-16 text-5xl font-semibold text-white">
           <h1 className="m-2 p-2 emph">About Us</h1>
-          <img className="m-5 rounded-md w-1/4" src={aboutus} />
+          <img className="m-5 rounded-md w-1/4" src={aboutus} alt="" />
           <div className="about-text rounded-lg w-3/4 mt-4">
             <p className="text-3xl m-2 p-2">
               ETWOT is a one roof solution for your technical requirements. We
@@ -28,6 +28,7 @@ export default function About() {
           </div>
         </div>
       </div>
+      <div className="position-fixed bottom-0"></div>
       <Footer />
     </>
   );

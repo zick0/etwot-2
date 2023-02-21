@@ -82,3 +82,27 @@ export const submit_form = async (obj) => {
   const ans = await res.json();
   return ans;
 };
+
+export const edit_form = async (obj) => {
+  const res = await fetch(`${base}/api/user/form/edit`, {
+    method: "PUT",
+    body: JSON.stringify(obj),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const ans = await res.json();
+  return ans;
+};
+
+export const get_forms_by_formid = async (obj) => {
+  const res = await fetch(`${base}/api/user/forms_by_id`, {
+    method: "POST",
+    body: JSON.stringify(obj),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const ans = await res.json();
+  return ans;
+};

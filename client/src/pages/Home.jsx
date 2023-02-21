@@ -33,10 +33,11 @@ export default function Home() {
       >
         <div className="w-full h-screen bg-cover bg-center flex items-center justify-between px-4">
           <div className="w-1/2">
-            <div className="hometext text-wrap text-white text-5xl w-full font-bold">
+            <div className="hometext p-2 text-white text-5xl w-full font-bold">
               <p>
-                Take your business to the pinnacle with us. <br />
-                Let our experts handle the mayhem
+                ETWOT is a one stop interface connecting clients and technical
+                experts of every field. <br /> Revolutionise the digital reach
+                of your business with our experts.
               </p>
             </div>
           </div>

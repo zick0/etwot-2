@@ -11,8 +11,13 @@ export default function DashboardApplicant() {
   let [budget, setBudget] = useState("");
   let [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   let [userId, setUserId] = useState("");
+  let [image, setImage] = useState(null);
+  let [selectedFiles, setSelectedFiles] = useState(undefined);
 
   const navigate = useNavigate();
+
+  const fileObj = [];
+  const fileArray = [];
 
   useEffect(() => {
     if (localStorage.getItem("user_token")) {
@@ -34,19 +39,16 @@ export default function DashboardApplicant() {
   });
 
   const handleChange = async (e) => {
-    console.log("yesss");
     e.preventDefault();
+
     let obj = {
       form_title: title,
       form_desc: desc,
       form_budget: budget,
       token: localStorage.getItem("user_token"),
     };
-    console.log("yesss");
 
     submit_form(obj).then((data) => {
-      console.log("yesss");
-      console.log(data);
       alert(data.message);
       window.location.reload();
     });
@@ -105,17 +107,21 @@ export default function DashboardApplicant() {
               <div>
                 <div class="signup">
                   <form method="POST">
-                    <input
-                      className="input"
-                      type="text"
-                      name="txt"
-                      placeholder="Title"
-                      required=""
-                      value={title}
-                      onChange={(e) => {
-                        setTitle(e.target.value);
-                      }}
-                    />
+                    <select
+                      onChange={(e) => setTitle(e.target.value)}
+                      className="dropdown"
+                      name="user_type"
+                      required
+                    >
+                      <option value="" disabled selected hidden>
+                        Select a Service
+                      </option>
+                      <option value="Digital Marketing">Digital Marketing</option>
+                      <option value="Content Creation">Content Creation</option>
+                      <option value="Logo Designing">Logo Designing</option>
+                      <option value="Web Development">Web Development</option>
+                      <option value="Graphic Designing">Graphic Designing</option>
+                    </select>
                     <input
                       className="input"
                       type="text"
@@ -131,13 +137,21 @@ export default function DashboardApplicant() {
                       className="input"
                       type="number"
                       name="budget"
-                      placeholder="Budget"
+                      placeholder="Budget (USD)"
                       required=""
                       value={budget}
                       onChange={(e) => {
                         setBudget(e.target.value);
                       }}
                     />
+                    {/* <input
+                      className="input"
+                      type="file"
+                      name="images"
+                      placeholder="Upload image"
+                      required=""
+                      onChange={selectFiles}
+                    /> */}
                     <button
                       className="signup-btn"
                       value="Register"

@@ -47,10 +47,22 @@ export const get_admin_det_by_id = async (obj) => {
   return ans;
 };
 
-export const get_forms = async () => {
+export const get_forms = async (obj) => {
   const res = await fetch(`${base}/api/admin/forms`, {
-    method: "GET",
-    body: JSON.stringify(),
+    method: "POST",
+    body: JSON.stringify(obj),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const ans = await res.json();
+  return ans;
+};
+
+export const action_by_admin = async (obj) => {
+  const res = await fetch(`${base}/api/admin/action_by_admin`, {
+    method: "PUT",
+    body: JSON.stringify(obj),
     headers: {
       "Content-Type": "application/json",
     },

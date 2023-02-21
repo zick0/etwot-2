@@ -8,13 +8,13 @@ import { login_admin } from "../controllers/admin";
 import { login_user } from "../controllers/user";
 import { register_admin } from "../controllers/admin";
 import { register_user } from "../controllers/user";
-import Navbar2 from "../components/Navbar2";
 
 export default function Signup() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [contact, setContact] = useState("");
 
   let [userType, setUserType] = useState("admin");
 
@@ -36,6 +36,7 @@ export default function Signup() {
         user_name: name,
         user_email: email,
         user_password: password,
+        user_contact: contact,
       };
       register_user(obj).then((data) => {
         alert(data.message);
@@ -51,22 +52,20 @@ export default function Signup() {
     e.preventDefault();
     let login_userType = document.getElementById("login_type").value;
     if (login_userType === "admin") {
-      console.log("ho raha")
       let obj = {
         admin_email: email,
         admin_password: password,
       };
       login_admin(obj).then((data) => {
-        console.log("insude")
         console.log(data);
         if (data.tag) {
-          console.log("yess")
           localStorage.setItem("admin_token", data.token);
+          navigate("/admindashboard");
+        } else {
+          alert("Invalid login");
         }
-        alert(data.token);
         // console.log(localStorage.getItem("admin_token"));
-        navigate('/admindashboard');
-        // window.location.reload();
+        window.location.reload();
       });
     } else if (login_userType === "user") {
       let obj = {
@@ -76,10 +75,10 @@ export default function Signup() {
       login_user(obj).then((data) => {
         if (data.tag === true) {
           localStorage.setItem("user_token", data.token);
+          navigate("/userdashboard");
+        } else {
+          alert("Invalid login");
         }
-        console.log(localStorage.getItem("user_token"));
-        alert(data.token);
-        navigate('/userdashboard');
         window.location.reload();
       });
     }
@@ -136,6 +135,21 @@ export default function Signup() {
                   setEmail(e.target.value);
                 }}
               />
+
+              {userType === "user" && (
+                <input
+                  className={`input`}
+                  type="number"
+                  name="contact"
+                  placeholder="Contact"
+                  required=""
+                  value={contact}
+                  onChange={(e) => {
+                    setContact(e.target.value);
+                  }}
+                />
+              )}
+
               <input
                 className="input"
                 type="password"

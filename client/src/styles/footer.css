@@ -3,6 +3,7 @@
   width: 100%;
   background: #00121b;
   display: block;
+  bottom: 0;
 }
 
 .inner-footer {
@@ -114,6 +115,13 @@
 @media screen and (max-width: 660px) {
   .footer-items {
     width: 100%;
+  }
+  .footer {
+    width: 100%;
+    background: #00121b;
+    /* display: block; */
+    /* position: fixed;
+    bottom: 0; */
   }
 }
 

@@ -14,7 +14,7 @@ import Navbar2 from "../components/Navbar2";
 
 export default function Services() {
   return (
-    <>
+    <div className="h-screen">
       <Navbar />
       <div className="servicesbg p-16">
         {/* <img className="imgabout" src={about1} /> */}
@@ -71,6 +71,6 @@ export default function Services() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }

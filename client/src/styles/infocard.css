@@ -41,7 +41,7 @@
   font-weight: 500;
   line-height: 25px;
 }
-.right a {
+.btn {
   text-decoration: none;
   text-transform: uppercase;
   background-color: #000c66;
@@ -50,7 +50,7 @@
   display: inline-block;
   letter-spacing: 2px;
 }
-.right a:hover {
+.btn:hover {
   background-color: #00073e;
   transition: 0.5s;
 }

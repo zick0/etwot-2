@@ -6,11 +6,10 @@ import Navbar2 from "../components/Navbar2";
 
 export default function Privacy() {
   return (
-    <>
+    <div className="h-screen ">
       <Navbar />
-      <div className="policybg about flex flex-col justify-center items-center">
-        {/* <img className="imgabout" src={about1} /> */}
-
+      {/* <img className="imgabout" src={about1} /> */}
+      <div className="policybg h-screen about flex flex-col justify-center items-center">
         <div className="bg-[#f3f4f5] about-text title text-left p-3 mt-32 rounded text-3xl font-semibold text-white w-3/4 ">
           <h1 className="text-5xl text-center font-bold emph">
             Terms and Conditions
@@ -65,8 +64,8 @@ export default function Privacy() {
             otherwise provide through the Services
           </p>
         </div>
-      </div>
       <Footer />
-    </>
+      </div>
+    </div>
   );
 }

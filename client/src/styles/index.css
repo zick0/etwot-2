@@ -40,7 +40,7 @@ body {
   color: white;
   /* white-space: nowrap; */
   overflow: hidden;
-  width: 20em;
+  /* width: 20em; */
   font-size: 2.5rem;
   /* animation: type 4s steps(60, end);  */
 }
@@ -78,27 +78,46 @@ body {
 } */
 
 .serveButton {
+  background-color: #000c66;
+  color: white;
+  border-radius: 8px;
 }
 .serveButton button:hover {
-  background-color: pink;
+  background-color: #15259d;
+  color: whitesmoke;
+  transition: 0.5s;
   box-shadow: 0 14px 26px rgba(0, 0, 0, 0.04);
 }
 .dashbg {
-  background-color: #000c66;
+  background-color: #001220;
 }
 
 .dashcard {
-  background-color: #0014a8;
+  /* background-color: #0014a8; */
+  background-color: rgba(208, 204, 204, 0.4);
+  backdrop-filter: blur(10px);
+}
+.accept {
+  background-color: rgba(169, 221, 151, 0.4);
+}
+.deny {
+  background-color: rgba(221, 151, 151, 0.4);
 }
 
 .edit-dash {
   width: 5rem;
-  background-color: #0019d7;
+  background-color: rgb(12, 112, 12);
+}
+.edit-dash:hover {
+  background-color: rgb(19, 161, 19);
 }
 
 .delete-dash {
   width: 5rem;
-  background-color: #0019d7;
+  background-color: rgba(255, 0, 0, 0.668);
+}
+.delete-dash:hover {
+  background-color: rgba(255, 0, 0, 0.974);
 }
 
 .servicesbg {
@@ -175,7 +194,8 @@ body {
 .policybg {
   background-image: url(../assets/about1.svg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:cover;
+  /* object-fit:; */
 }
 
 .team-container {
@@ -185,5 +205,8 @@ body {
   .team-container {
     min-height: max-content;
     width: fit-content;
+  }
+  .servicesbg{
+    height: 100vh;
   }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/infocard.css";
 const InfoCard = () => {
   return (
@@ -10,9 +11,9 @@ const InfoCard = () => {
             <h1>Worried about your growth?</h1>
             <p>Lets prosper together. </p>
             <p>Quality is our top most priority.</p>
-            <a href="#" className="btn rounded">
-              Join Us
-            </a>
+            <div className="btn rounded">
+            <Link to="/signup">Get Started</Link>
+            </div>
           </div>
         </div>
       </div>

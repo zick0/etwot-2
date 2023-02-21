@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <div class="footer">
+      <div class="footer mt-auto">
         <div class="inner-footer">
           <div class="footer-items">
             <h1>ETWOT</h1>
@@ -66,23 +66,12 @@ const Footer = () => {
             <h2 className="text-2xl">Contact us</h2>
             <div class="border1"></div>
             <ul className="footer-ul text-xl">
-              <li>
+              <li className="flex items-center">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                support@etwot.com
+                <a href="mailto:support@etwot.com">support@etwot.com</a>
               </li>
             </ul>
 
-            <div class="social-media">
-              <a href="#">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-facebook"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-google-plus-square"></i>
-              </a>
-            </div>
           </div>
         </div>
 
